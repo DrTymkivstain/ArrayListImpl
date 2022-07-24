@@ -1,3 +1,5 @@
+package ArrayList;
+
 import java.util.*;
 import java.util.function.UnaryOperator;
 
@@ -217,7 +219,7 @@ public class ArrayList1<E> implements List<E> {
 
     @Override
     public List<E> subList(int fromIndex, int toIndex) {
-        List<E> a = new ArrayList1<>(toIndex - fromIndex);
+        List<E> a = (List<E>) new ArrayList1<>(toIndex - fromIndex);
         for (int i = 0; i < toIndex - fromIndex; i++) {
             a.add(elements[fromIndex++]);
         }
