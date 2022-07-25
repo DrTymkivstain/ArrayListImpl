@@ -9,6 +9,9 @@ public class Main {
         someLinkedList.addTail("r");
         someLinkedList.addHead("1");
         someLinkedList.add("hello", 4);
+        System.out.println(someLinkedList.remove("w"));
+        System.out.println(someLinkedList.remove("wer"));
+        System.out.println(someLinkedList.remove(3));
         System.out.println(someLinkedList.getElByIndex(4));
 
     }

@@ -44,6 +44,31 @@ public class LinkedList1 <E> implements Linked <E>{
     }
 
     @Override
+    public boolean remove(E element) {
+        Node<E> currentNode = firstNode.next;
+        while (getNextNode(currentNode) != null){
+            if(currentNode.item.equals(element)) {
+                break;
+            } else if (currentNode.next.equals(lustNode)) {
+                return  false;
+            }
+            currentNode = getNextNode(currentNode);
+        }
+        currentNode.prev.next = currentNode.next;
+        currentNode.next.prev = currentNode.prev;
+        size--;
+        return true;
+    }
+
+    boolean remove(int index) {
+        if (index <= size){
+        remove(getElByIndex(index));
+        return true;
+        }
+        return  false;
+    }
+
+    @Override
     public int size() {
         return size;
     }
